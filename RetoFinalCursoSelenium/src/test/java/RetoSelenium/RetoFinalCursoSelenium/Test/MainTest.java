@@ -18,7 +18,7 @@ public class MainTest {
 
 	@Before
 	public void abrirNavegador() {
-		System.setProperty("webdriver.chrome.driver", "D:/SeleniumEjemplos/ChromeDrivers/chromedriver_2.37.exe");
+		System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
 
 		driver = new ChromeDriver();
 
@@ -32,6 +32,11 @@ public class MainTest {
 	}
 	
 	@Test 
+	/**
+	 * 
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
 	public void llenarFormulario() throws InterruptedException, IOException {
 		DatosObject datosObject = new DatosObject();
 		datosObject.leerArchivoXml();
