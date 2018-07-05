@@ -21,19 +21,4 @@ public class PpalTimeSheet {
 
 		// ----------------------------------------
 	}
-/*
-	public static void ClickVentana() throws AWTException {
-		Robot r = new Robot();
-	    r.mouseMove(390,390);
-	    r.mousePress( InputEvent.BUTTON1_MASK );
-	    r.mouseRelease( InputEvent.BUTTON1_MASK );
-	    try {
-			Thread.sleep(50);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	    r.mousePress( InputEvent.BUTTON1_MASK );
-	    r.mouseRelease( InputEvent.BUTTON1_MASK );
-	}
-	*/
 }

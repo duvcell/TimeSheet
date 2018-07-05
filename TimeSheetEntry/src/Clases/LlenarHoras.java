@@ -73,43 +73,28 @@ public class LlenarHoras {
 		// diasNohabiles = 1;
 		// try {
 		// while (diasNohabiles <= 5) {
-		for (int i = 30; i < 32; i++) {
+		for (int i = 1; i < 32; i++) {
 			Thread.sleep(2000);
+
 			// Metodo capturador de fecha
 			fechaCal = ArmarFecha(i);
 
 			// Se arma el Xpath para identificar eld ia a llenar en el calendario con las
 			// fechas requeridas
 			XpathPersonalizado = "//*[(@class=\'notFilledEffort\') and (@id=\'" + fechaCal + "-E\')]";
-			/*
-			 * XpathFuturo = "//*[(@class=\'futureEffort\') and (@id=\'" + fechaCal +
-			 * "-E\')]"; XpathNoValido = "//*[(@class=\'hlwEffort\') and (@id=\'" + fechaCal
-			 * + "-E\')]";
-			 * 
-			 * FechaFutura = (new WebDriverWait(driver, 10))
-			 * .until(ExpectedConditions.presenceOfElementLocated((By.xpath(XpathFuturo))));
-			 * 
-			 * FechaInhabilitada = (new WebDriverWait(driver, 10))
-			 * .until(ExpectedConditions.presenceOfElementLocated((By.xpath(XpathNoValido)))
-			 * );
-			 */
+
+			while (!findBy(XpathPersonalizado)) {
+				i++;
+				fechaCal = ArmarFecha(i);
+			}
+	
 			// Esperar 20 segundos que abra la página TimeSheet y proceder a dar click en el
 			// calendario
 			almanaque = (new WebDriverWait(driver, 10))
 					.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(XpathPersonalizado))));
-			// if (almanaque != null) {
 
-			// compararXpath = XpathPersonalizado.equals(XpathNoValido);
-			// if(compararXpath = false) {
-			// diasNohabiles = diasNohabiles;
 			// Esperar 20 segundos que abra la página TimeSheet y proceder a dar click en el
 			// calendario
-			/*
-			 * almanaque = (new WebDriverWait(driver, 10))
-			 * .until(ExpectedConditions.presenceOfElementLocated((By.xpath(
-			 * XpathPersonalizado))));
-			 */
-			// "//*[(@class=\'notFilledEffort\') and (@id=\'11/04/2018-E\')]"
 			txtFecha = driver.findElement(By.id(fechaCal));
 			// ("//*td[@id='02/04/2018']/div*[@id='02/04/2018-E']"));
 			txtFecha.click();
@@ -129,22 +114,9 @@ public class LlenarHoras {
 
 			// Se reistran las horas llenadas
 			btnEnviar.click();
-			/*
-			 * }else { // Esperar 20 segundos que abra la página TimeSheet y proceder a dar
-			 * click en el // calendario almanaque = (new WebDriverWait(driver, 20))
-			 * .until(ExpectedConditions.presenceOfElementLocated((By.xpath(XpathNoValido)))
-			 * ); diasNohabiles++; }
-			 * 
-			 * }
-			 */
-			// } else {
-			// i++;
-			// }
+
 		}
-		/*
-		 * } catch (Exception e) { System.err.println("Error al colocar el tiempo: " +
-		 * e); }
-		 */
+
 		JOptionPane.showMessageDialog(null, "Llenado Exitoso:" + fechaCal);
 		cerrarSesion();
 	}

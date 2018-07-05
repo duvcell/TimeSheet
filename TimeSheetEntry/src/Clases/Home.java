@@ -67,25 +67,6 @@ public class Home {
 		}
 	}
 
-	/*
-	 * public void AbrirNavegador(WebDriver driver) {
-	 * 
-	 * System.setProperty("webdriver.chrome.driver",
-	 * "Jars y Drivers/chromedriver.exe"); driver = new ChromeDriver();
-	 * driver.manage().window().maximize(); try { Thread.sleep(2000); } catch
-	 * (InterruptedException e) { // Auto-generated catch block e.printStackTrace();
-	 * } driver.get("https://www.ultimatix.net"); // Buscamos el elemento para
-	 * introducir el usuario txtUser =
-	 * driver.findElement(By.xpath("//*[@id=\"USER\"]"));
-	 * 
-	 * // Buscamos el elemento para introducir la contraseña txtPaswd =
-	 * driver.findElement(By.xpath("//*[@id=\"PASSWORD\"]"));
-	 * 
-	 * btLogin = driver.findElement(By.id("login_button"));
-	 * 
-	 * }
-	 */
-
 	public void Logueo() throws IOException {
 
 		Datos credenciales = new Datos();
@@ -112,14 +93,7 @@ public class Home {
 		linkTimeEntry = wait.until(ExpectedConditions
 				.presenceOfElementLocated(By.xpath("//a[contains(.,'Timesheet Entry') and (@class='trendApps')]")));
 		linkTimeEntry.click();
-		// Esperar 20 segundos que abra la página principal y proceder a dar click en
-		// TimeSheet
-		// linkTimeEntry = (new WebDriverWait(driver,
-		// 20)).until(ExpectedConditions.presenceOfElementLocated((By.xpath("//a[contains(.,'Timesheet
-		// Entry') and (@class='trendApps')]"))));
-		// driver.findElement(By.xpath("//a[contains(.,'Timesheet Entry') and
-		// (@class='trendApps')]")).click();
-		// .visibilityOfElementLocated
+
 	}
 
 }
