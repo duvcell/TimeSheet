@@ -1,4 +1,0 @@
-1400956@50HW013371 MINGW64 /d/Información General/2 - Información Personal/1- Confidencial/SeleniumEjemplos/RepositorioDJ (Version3)
-$ git config --global --list
-user.name=DjChrist
-user.email=duvcell@gmail.com
